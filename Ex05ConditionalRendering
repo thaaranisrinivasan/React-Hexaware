@@ -1,0 +1,38 @@
+import React from "react";
+// if and else in jsx
+const Ex05ConditionalRendering=() =>{
+    const students = [
+        
+            {id:1, name:"Riya", score:95},
+            
+            {id:2, name:"Miya", score:85}
+    ];
+
+    const result=students.find((student)=> student.score>100);
+    console.log(`Result : ${result}`);
+
+    return (
+        <>
+        {result ? <comp1 /> : <comp2 />}
+        <hr />
+        </>
+    );
+
+    const Comp1=()=>{
+        return (
+            <>
+            <p>Students Present</p>
+            </>
+        );
+    };
+
+    const Comp2=()=>{
+        return (
+            <>
+            <p>No Students</p>
+            </>
+        );
+    };
+
+};
+export default Ex05ConditionalRendering;
