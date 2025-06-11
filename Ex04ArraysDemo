@@ -1,0 +1,70 @@
+import React from "react";
+
+const Ex04ArraysDemo=()=>{
+    const students=[
+        { id: 1, name: "Riya", score: 85},
+        { id: 2, name: "Miya", score: 30},
+        { id: 3, name: "Tiya", score: 70},
+        { id: 4, name: "Siya", score: 40},
+    ];
+
+//filter() Demo
+console.log("Students :", students);
+const passedStudents=students.filter((student)=>student.score>=50 && student.score<=85);
+console.log("Passed Students:", passedStudents);
+
+// find ()
+const student=students.find((student)=>student.score>90);
+console.log('1st Student with marks >90 : ${student.name}'); //template literal
+
+// Do not push node modules in Git ( Size : Giga bytes). Give Git Ignore
+// reduce () - get totalMarks of all students
+
+const totalMarks=students.reduce((sum, student)=>{
+    return sum+ student.score;
+}, 100); // 0 --> 100
+
+console.log(`Total Score : ${totalMarks}`);
+
+//Average
+const average=totalMarks/students.length;
+console.log(`Average : ${average}`);
+
+// Students in maximum score
+const scores=students.map((student)=> student.score);
+console.log(`Scores: ${scores}`);
+
+const maxscore=Math.max(...scores); // Spread Operator
+console.log(`Max Score : ${maxscore}`);
+
+const topper=students.filter(s=>s.score==maxscore);
+console.log(`Toppers : ${topper}`);
+
+//[85, 60, 95, 50]
+const maxScore=Math.max(...scores); Math.max(1,2,3,4)
+console.log(`Max Score : ${maxScore}`)
+
+    return <>
+    {/*map() demo */}
+    {
+    students.map((student, index)=>{
+        return ( <p key={student.id}>
+            {student.id}, {student.name} - {student.score}
+        </p>)
+       
+    })
+    }
+    <hr/>
+    {/* filter Demo */}
+    <ul>
+        {students
+          .filter((student)=>student.score>=50 && student.score<=85)
+          .map((student)=>{
+            return <li>{student.id}. {student.name} - {student.score}</li>
+          })
+}
+    
+     </ul>
+    </>;
+};
+export default Ex04ArraysDemo;
