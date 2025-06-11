@@ -1,0 +1,17 @@
+import React from 'react'
+
+const Ex03JsxDemo = () => {
+  
+  const CompanyName="Hexaware";
+  const numberOfTeams=10;
+  const isLoggedIn=true;
+  return (
+    <>
+    <h1>Company Name : {companyName}</h1>
+    <p>No of Teams :{numberOfTeams}</p>
+    <p>{isLoggedIn ? "Welcome User":"Log In"}</p>
+    </>
+  );
+};
+
+export default Ex03JsxDemo
